@@ -7,8 +7,8 @@ def to_ruby_case(text):
     callback = lambda pat: pat.group(1).upper()
     text = re.sub("_(\w)", callback, text)
     if text[0].islower():
-        text = text[0].upper() + text[1:]
-    return text + "::"
+        text = "::" + text[0].upper() + text[1:]
+    return text
     
 def to_snake_case(text):
     text = re.sub('[-. _]+', '_', text)
