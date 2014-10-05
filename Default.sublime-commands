@@ -1,0 +1,6 @@
+[
+	{
+	    "caption": "Convert Case: RubyCase",
+	    "command": "convert_to_ruby"
+	},
+]
