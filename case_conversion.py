@@ -5,13 +5,13 @@ import re
 
 def to_ruby_case(text):
     callback = lambda pat: pat.group(1).upper()
-    text = re.sub("_(\w)", callback, text)
+    #text = re.sub("_(\w)", callback, text)
     if text[0].islower():
-        text = "::" + text[0].upper() + text[1:]
+        text = text[0].upper() + text[1:]
     return text
     
 def to_snake_case(text):
-    text = re.sub('[-. _]+', '_', text)
+    text = re.sub('[-. _]+', '::', text)
     if text.isupper():
         # Entirely uppercase; assume case is insignificant.
         return text.lower()
