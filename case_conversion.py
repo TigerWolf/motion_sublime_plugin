@@ -15,7 +15,7 @@ def to_snake_case(text):
     if text.isupper():
         # Entirely uppercase; assume case is insignificant.
         return text.lower()
-    return re.sub('(?<=[^_])([A-Z])', r'_\1', text).lower()
+    return re.sub('(?<=[^_])([A-Z])', r'::\1', text).lower()
 
 def to_snake_case_graceful(text):
     text = re.sub('[-. _]+', '_', text)
