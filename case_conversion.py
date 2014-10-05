@@ -23,6 +23,9 @@ def to_snake_case_graceful(text):
         # Entirely uppercase; assume case is insignificant.
         return text;
     return re.sub('(?<=[^_])([A-Z])', r'_\1', text)    
+    
+def strip_wrapping_underscores(text):
+    return re.sub("^(_*)(.*?)(_*)$", r'\2', text)    
 
 def run_on_selections(view, edit, func, no_lower=False):
     for s in view.sel():
